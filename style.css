@@ -1,0 +1,85 @@
+/* card */
+
+.filmCard {
+    border-radius: 10px;
+    min-width: 228px;
+    transition: 0.3s;
+    padding: 0;
+}
+
+.filmInfo {
+    background-color: rgb(36, 36, 36);
+    padding: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: none;
+}
+
+.filmInfo ion-icon {
+    color: white;
+    padding: 10px;
+    border: 2px solid rgb(161, 161, 161);
+    border-radius: 50%;
+}
+
+#play {
+    color: black;
+    background-color: white;
+}
+
+.filmDescription p {
+    color: rgb(161, 161, 161);
+}
+
+.genre {
+    color: white;
+}
+
+/* card hover */
+
+.filmCard:hover img {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.filmCard:hover .filmInfo {
+    display: block;
+}
+
+.filmCard:hover {
+    transform: scale(1.2);
+}
+
+/* navbar */
+
+.navbar {
+    background-color: rgb(36, 36, 36)!important;
+}
+
+#netflixLogo {
+    width: 100px
+}
+
+.nav-link {
+ --bs-nav-link-color: white;
+ --bs-nav-link-hover-color: rgb(161, 161, 161);
+ --bs-navbar-active-color: rgb(161, 161, 161);
+}
+
+.sideNav ion-icon {
+    color: white;
+    font-size: 18px;
+}
+
+.sideNav p {
+    color: white;
+    font-size: 12px;
+}
+
+#navbarNav {
+    justify-content: space-between;
+}
+
+#toggleMenu {
+    color: white;
+}

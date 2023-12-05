@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nextflix</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+
+    <nav class="navbar px-3 navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <img src="./assets/Netflix_Logo_RGB.png" alt="netflix-logo" id="netflixLogo">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <ion-icon name="menu" id="toggleMenu"></ion-icon>
+        </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">TV Shows</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Movies</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Recently Added</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">My List</a>
+              </li>
+            </ul>
+            <div class="sideNav d-flex align-items-center gap-3">
+                <ion-icon name="search"></ion-icon>
+                <p class="m-0">KIDS</p>
+                <ion-icon name="notifications"></ion-icon>
+                <img src="https://placehold.it/30x30" alt="profile-pic">
+            </div>
+          </div>
+        </div>
+      </nav>
+
+    <div class="row">
+    <div class="filmCard d-flex flex-column col-2">
+      <img src="./assets/1.png" alt="film-img" class="w-100" />
+      <div class="filmInfo">
+        <div class="filmButtons d-flex justify-content-between">
+            <div class="mainIcons">
+                <ion-icon name="play" id="play"></ion-icon>
+                <ion-icon name="add"></ion-icon>
+                <ion-icon name="thumbs-up"></ion-icon>
+            </div>
+            <ion-icon name="chevron-down"></ion-icon>
+        </div>
+        <div class="filmDescription d-flex align-items-center gap-3">
+          <p class="filmTitle m-0">Titolo</p>
+          <p class="filmLenght m-0">148min</p>
+        </div>
+        <div class="genre">Fantasy</div>
+      </div>
+    </div>
+</div>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
