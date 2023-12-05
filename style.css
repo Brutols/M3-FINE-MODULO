@@ -1,3 +1,8 @@
+
+body {
+    background-color: rgb(36, 36, 36);
+}
+
 /* card */
 
 .filmCard {
@@ -82,4 +87,23 @@
 
 #toggleMenu {
     color: white;
+}
+
+/* carousel */
+
+h2 {
+    color: white;
+    width: 90%;
+    margin: auto;
+    padding-bottom: 10px;
+}
+
+.carousel-inner {
+    width: 90%;
+    margin: auto;
+    overflow: visible;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    width: 60px;
 }
