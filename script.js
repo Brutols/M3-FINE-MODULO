@@ -109,47 +109,66 @@ const films = [
   },
 ];
 
-let carouselTitles = ["Trending Now", "Watch It Again", "New Releases"];
+let cardPerItem = 6;
+let carouselNumber = document.querySelectorAll(".carousel");
+console.log(carouselNumber);
+let start = 0;
+let end = start + (cardPerItem - 1);
+console.log(start);
+console.log(end);
 
-let showCarousel = function () {
-  let main = document.querySelector(".main");
-  for (let i = 0; i < carouselTitles.length; i++) {
-    main.innerHTML += `
-    <h2>${carouselTitles[i]}</h2>
-    <div id="carouselExample" class="carousel slide">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-        <div class="row"></row>
+let createCard = function (start, end) {
+  let cardsHTML = "";
+  for (let i = start; i <= end; i++) {
+    cardsHTML += `
+    <div class="filmCard d-flex flex-column col-2">
+    <img src="${films[i].image}" alt="film-img" class="w-100" />
+    <div class="filmInfo">
+      <div class="filmButtons d-flex justify-content-between">
+        <div class="mainIcons">
+          <ion-icon name="play" id="play"></ion-icon>
+          <ion-icon name="add"></ion-icon>
+          <ion-icon name="thumbs-up"></ion-icon>
         </div>
-        <div class="carousel-item">
-        <div class="row"></row>
-        </div>
-        <div class="carousel-item">
-        <div class="row"></row>
-        </div>
+        <ion-icon name="chevron-down"></ion-icon>
       </div>
-      <button
-        class="carousel-control-prev"
-        type="button"
-        data-bs-target="#carouselExample"
-        data-bs-slide="prev"
-      >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button
-        class="carousel-control-next"
-        type="button"
-        data-bs-target="#carouselExample"
-        data-bs-slide="next"
-      >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+      <div class="filmDescription d-flex align-items-center gap-3">
+        <p class="filmTitle m-0">${films[i].title}</p>
+        <p class="filmLenght m-0">${films[i].length}min</p>
+      </div>
+      <div class="genre">${films[i].genre}</div>
     </div>
-  </div>
+  </div>    
     `;
+  }
+  return cardsHTML;
+};
+
+let populateCarousel = function () {
+  for (let i = 0; i < carouselNumber.length; i++) {
+    cardsHTML = createCard(start, end);
+    console.log(cardsHTML);
+    carouselNumber[i].children[0].innerHTML = `
+    <div class="carousel-item active">
+      <div class="row">
+        ${cardsHTML}
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="row">
+        ${cardsHTML}
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="row">
+        ${cardsHTML}
+      </div>
+    </div>
+    `;
+    start += cardPerItem;
+    end = start + (cardPerItem - 1);
+    console.log(start);
   }
 };
 
-showCarousel();
+populateCarousel();

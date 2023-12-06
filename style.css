@@ -107,3 +107,39 @@ h2 {
 .carousel-control-prev, .carousel-control-next {
     width: 60px;
 }
+
+.row {
+    justify-content: center;
+}
+
+/* media query responsive*/
+
+@media screen and (max-width: 1491px) {
+    .filmCard:nth-child(6) {
+        display: none!important;
+    }
+}
+
+@media screen and (max-width: 1238px) {
+    .filmCard:nth-child(5) {
+        display: none!important;
+    }
+}
+
+@media screen and (max-width: 985px) {
+    .filmCard:nth-child(4) {
+        display: none!important;
+    }
+}
+
+@media screen and (max-width: 732px) {
+    .filmCard:nth-child(3) {
+        display: none!important;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .filmCard:nth-child(2) {
+        display: none!important;
+    }
+}
