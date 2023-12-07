@@ -133,7 +133,7 @@ let createCard = function (start, end) {
         <ion-icon name="chevron-down"></ion-icon>
       </div>
       <div class="filmDescription d-flex align-items-center gap-3">
-        <p class="filmTitle m-0">${films[i].title}</p>
+        <p class="filmTitle text-truncate m-0">${films[i].title}</p>
         <p class="filmLenght m-0">${films[i].length}min</p>
       </div>
       <div class="genre">${films[i].genre}</div>

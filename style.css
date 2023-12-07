@@ -7,17 +7,17 @@ body {
 .filmCard {
   border-radius: 10px;
   min-width: 228px;
-  transition: 0.3s;
   padding: 0;
   position: relative;
 }
 
 .filmInfo {
   background-color: rgb(36, 36, 36);
-  padding: 10px;
+  padding: 0px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  display: none;
+  opacity: 0;
+  height: 0px;
   position: absolute;
   top: 100%;
   width: 100%;
@@ -45,26 +45,52 @@ body {
 
 /* card hover */
 
-.filmCard:hover img {
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
-}
-
-.filmCard:hover .filmInfo {
-  display: block;
-}
-
-.filmCard:hover {
-  transform: scale(1.2);
+@keyframes cardHover {
+  to {
+    transform: scale(1.2);
   -webkit-box-shadow: 2px 2px 15px 5px #101010;
   box-shadow: 2px 2px 15px 5px #101010;
   z-index: 2;
+  }
+}
+
+@keyframes cardImgHover {
+  to {
+    border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  }
+}
+
+@keyframes filmInfoHover {
+  to {
+    padding: 10px;
+  height: unset;
+  opacity: 1;
+  }
+}
+
+.filmCard:hover img {
+  animation: cardImgHover 0.3s forwards;
+}
+
+.filmCard:hover .filmInfo {
+  animation: filmInfoHover 0.3s forwards;
+}
+
+.filmCard:hover {
+  animation: cardHover 0.3s forwards;
 }
 
 /* navbar */
 
 .navbar {
+  width: 90%;
+  margin: auto;
   background-color: rgb(36, 36, 36) !important;
+}
+
+.container-fluid {
+  --bs-gutter-x: unset;
 }
 
 #netflixLogo {
@@ -95,13 +121,70 @@ body {
   color: white;
 }
 
+/* jumbotron */
+
+h1 {
+  color: white;
+}
+
+.jumbotron {
+  width: 90%;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.jumboMain {
+  flex-wrap: wrap;
+}
+
+.jumboSide {
+  padding: 3px;
+}
+
+.jumboSide ion-icon {
+  color: white;
+  font-size: 20px;
+}
+
+.jumboSide ion-icon:first-of-type {
+  transform: rotate(90deg);
+  padding-inline: 5px;
+  padding-block: 8px;
+  border: 1px solid white;
+}
+
+.jumboSide ion-icon:nth-of-type(2) {
+  padding-right: 8px;
+  padding-left: 10px;
+  padding-block: 5px;
+  border-right: 1px solid white;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+
+.jumboMain .btn {
+  --bs-btn-bg: black;
+  border-radius: unset;
+  --bs-btn-active-bg: rgb(161, 161, 161);
+  --bs-btn-active-color: rgb(36, 36, 36);
+}
+
+.jumboMain .dropdown-menu {
+  --bs-dropdown-bg: black;
+}
+
+.jumboMain .dropdown-menu .dropdown-item {
+  color: white;
+}
+
 /* carousel */
 
-h2 {
+h3 {
   color: white;
   width: 90%;
   margin: auto;
   padding-bottom: 10px;
+  font-size: 24px;
 }
 
 .carousel-inner {
@@ -119,34 +202,99 @@ h2 {
   justify-content: center;
 }
 
-/* media query responsive*/
+/* footer */
 
-@media screen and (max-width: 1491px) {
-  .filmCard:nth-child(6) {
-    display: none !important;
-  }
+footer {
+  width: 55%;
+  margin: auto;
+  padding-block: 20px;
+  padding-inline: auto;
 }
 
-@media screen and (max-width: 1238px) {
-  .filmCard:nth-child(5) {
-    display: none !important;
-  }
+.footerIcons ion-icon {
+  color: rgb(161, 161, 161);
+  font-size: 26px;
 }
 
-@media screen and (max-width: 987px) {
-  .filmCard:nth-child(4) {
-    display: none !important;
-  }
+.footerIcons ion-icon:hover {
+  color: white;
+  cursor: pointer;
 }
 
-@media screen and (max-width: 732px) {
-  .filmCard:nth-child(3) {
-    display: none !important;
-  }
+.footerLinks {
+  width: 100%;
 }
 
-@media screen and (max-width: 480px) {
-  .filmCard:nth-child(2) {
-    display: none !important;
-  }
+.footerLinks a {
+  text-decoration: none;
+  color: rgb(161, 161, 161);
+  font-size: 14px;
 }
+
+.footerLinks a:hover {
+  color: white;
+}
+
+.linkCol {
+  margin-inline: 0 auto;
+}
+
+.serviceCode {
+  color: rgb(161, 161, 161);
+  border: 2px solid rgb(161, 161, 161);
+  padding: 5px;
+}
+
+.serviceCode:hover {
+  color: white;
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+.tradeMark {
+  color: rgb(161, 161, 161);
+  font-size: 14px;
+}
+
+  /* media query responsive*/
+  
+  @media screen and (max-width: 1491px) {
+    .filmCard:nth-child(6) {
+      display: none !important;
+    }
+  }
+  
+  @media screen and (max-width: 1238px) {
+    .filmCard:nth-child(5) {
+      display: none !important;
+    }
+
+    .linkCol {
+      margin: unset;
+    }
+  }
+  
+  @media screen and (max-width: 987px) {
+    .filmCard:nth-child(4) {
+      display: none !important;
+    }
+
+
+  }
+  
+  @media screen and (max-width: 732px) {
+    .filmCard:nth-child(3) {
+      display: none !important;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .filmCard:nth-child(2) {
+      display: none !important;
+    }
+  
+    .jumboMain {
+      gap: 1rem!important;
+      margin-right: 1rem;
+    }
+  }

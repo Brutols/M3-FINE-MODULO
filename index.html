@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <nav class="navbar px-5 navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
         <img
           src="./assets/Netflix_Logo_RGB.png"
@@ -60,7 +60,31 @@
     </nav>
 
     <div class="main"></div>
-    <h2>Trending Now</h2>
+    <div class="jumbotron d-flex justify-content-between align-items-center">
+      <div class="jumboMain d-flex align-items-center gap-5">
+        <h1>TV Shows</h1>
+        <div class="dropdown">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Genres
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="jumboSide d-flex justify-content-center align-items-center">
+        <ion-icon name="stats-chart"></ion-icon>
+        <ion-icon name="grid"></ion-icon>
+      </div>
+    </div>
+    <h3>Trending Now</h3>
     <div id="carousel1" class="carousel slide">
       <div class="carousel-inner"></div>
       <button
@@ -82,7 +106,7 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
-    <h2>Watch It Again</h2>
+    <h3>Watch It Again</h3>
     <div id="carousel2" class="carousel slide">
       <div class="carousel-inner"></div>
       <button
@@ -104,7 +128,7 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
-    <h2>New Releases</h2>
+    <h3>New Releases</h3>
     <div id="carousel3" class="carousel slide">
       <div class="carousel-inner"></div>
       <button
@@ -126,6 +150,42 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
+
+    <footer class="d-flex flex-column align-items-start gap-3">
+      <div class="footerIcons d-flex gap-3">
+        <ion-icon name="logo-facebook"></ion-icon>
+        <ion-icon name="logo-instagram"></ion-icon>
+        <ion-icon name="logo-twitter"></ion-icon>
+        <ion-icon name="logo-youtube"></ion-icon>
+      </div>
+      <div class="footerLinks d-flex align-content-start flex-wrap gap-4">
+        <section class="linkCol d-flex flex-column">
+          <a href="">Audio and Subtitles</a>
+          <a href="">Media Center</a>
+          <a href="">Privacy</a>
+          <a href="">Contact Us</a>
+        </section>
+        <section class="linkCol d-flex flex-column">
+          <a href="">Audio Description</a>
+          <a href="">Investor Relations</a>
+          <a href="">Legal Notices</a>
+        </section>
+        <section class="linkCol d-flex flex-column">
+          <a href="">Help Center</a>
+          <a href="">Jobs</a>
+          <a href="">Cookie Preferences</a>
+        </section>
+        <section class="linkCol d-flex flex-column">
+          <a href="">Gift Cards</a>
+          <a href="">Terms of Use</a>
+          <a href="">Corporate Informations</a>
+        </section>
+      </div>
+      <div class="serviceCode">Service Code</div>
+      <div class="tradeMark">
+        © 1997 - 2019 Netflix, inc. {i-0d00fcda2fdf9c0de}
+      </div>
+    </footer>
 
     <script
       type="module"
