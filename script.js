@@ -239,9 +239,9 @@ let showHome = function () {
 let scrollNav = function () {
   let nav = document.querySelector(".navContainer")
   if (scrollY > 30) {
-    nav.classList.add("changeBackground")
+    nav.classList.replace( "navBackground", "changeBackground")
   } else {
-    nav.classList.remove("changeBackground")
+    nav.classList.replace("changeBackground", "navBackground")
   }
 }
 
