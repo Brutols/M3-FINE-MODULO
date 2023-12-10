@@ -48,24 +48,26 @@ body {
 @keyframes cardHover {
   to {
     transform: scale(1.2);
-  -webkit-box-shadow: 2px 2px 15px 5px #101010;
-  box-shadow: 2px 2px 15px 5px #101010;
-  z-index: 2;
+    -webkit-box-shadow: 2px 2px 15px 5px #101010;
+    box-shadow: 2px 2px 15px 5px #101010;
+    z-index: 2;
   }
 }
 
 @keyframes cardImgHover {
   to {
     border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
+    border-top-left-radius: 10px;
   }
 }
 
 @keyframes filmInfoHover {
   to {
     padding: 10px;
-  height: unset;
-  opacity: 1;
+    height: unset;
+    opacity: 1;
+    -webkit-box-shadow: 2px 2px 15px 5px #101010;
+    box-shadow: 2px 2px 15px 5px #101010;
   }
 }
 
@@ -84,9 +86,10 @@ body {
 /* navbar */
 
 .navbar {
-  width: 90%;
+  width: 92%;
   margin: auto;
-  background-color: rgb(36, 36, 36) !important;
+  z-index: 1000;
+  background-color: transparent !important;
 }
 
 .container-fluid {
@@ -101,6 +104,7 @@ body {
   --bs-nav-link-color: white;
   --bs-nav-link-hover-color: rgb(161, 161, 161);
   --bs-navbar-active-color: rgb(161, 161, 161);
+  cursor: pointer;
 }
 
 .sideNav ion-icon {
@@ -128,8 +132,8 @@ h1 {
 }
 
 .jumbotron {
-  width: 90%;
-  margin: auto;
+  width: 91%;
+  margin: 80px auto;
   flex-wrap: wrap;
 }
 
@@ -177,7 +181,17 @@ h1 {
   color: white;
 }
 
+.jumboMain .dropdown-item:hover,
+.jumboMain .dropdown-item:active {
+  color: black;
+  background-color: rgb(161, 161, 161);
+}
+
 /* carousel */
+
+#carousel3 {
+  margin-bottom: 6rem !important;
+}
 
 h3 {
   color: white;
@@ -202,13 +216,24 @@ h3 {
   justify-content: center;
 }
 
+/* search */
+
+.mainSearch {
+  width: 90%;
+  margin: auto;
+  padding-block: 70px;
+}
+
+.mainSearch h3 {
+  text-align: center;
+}
+
 /* footer */
 
 footer {
   width: 55%;
   margin: auto;
   padding-block: 20px;
-  padding-inline: auto;
 }
 
 .footerIcons ion-icon {
@@ -256,45 +281,77 @@ footer {
   font-size: 14px;
 }
 
-  /* media query responsive*/
-  
-  @media screen and (max-width: 1491px) {
-    .filmCard:nth-child(6) {
-      display: none !important;
-    }
-  }
-  
-  @media screen and (max-width: 1238px) {
-    .filmCard:nth-child(5) {
-      display: none !important;
-    }
+/* media query responsive*/
 
-    .linkCol {
-      margin: unset;
-    }
+@media screen and (max-width: 1491px) {
+  .filmCard:nth-child(6) {
+    display: none !important;
   }
-  
-  @media screen and (max-width: 987px) {
-    .filmCard:nth-child(4) {
-      display: none !important;
-    }
+}
 
+@media screen and (max-width: 1238px) {
+  .filmCard:nth-child(5) {
+    display: none !important;
+  }
 
+  .linkCol {
+    margin: unset;
   }
-  
-  @media screen and (max-width: 732px) {
-    .filmCard:nth-child(3) {
-      display: none !important;
-    }
+}
+
+@media screen and (max-width: 987px) {
+  .filmCard:nth-child(4) {
+    display: none !important;
   }
-  
-  @media screen and (max-width: 480px) {
-    .filmCard:nth-child(2) {
-      display: none !important;
-    }
-  
-    .jumboMain {
-      gap: 1rem!important;
-      margin-right: 1rem;
-    }
+}
+
+@media screen and (max-width: 732px) {
+  .filmCard:nth-child(3) {
+    display: none !important;
   }
+}
+
+@media screen and (max-width: 480px) {
+  .filmCard:nth-child(2) {
+    display: none !important;
+  }
+
+  .jumboMain {
+    gap: 1rem !important;
+    margin-right: 1rem;
+  }
+}
+
+/* js class */
+
+.visibilityHidden {
+  visibility: hidden;
+}
+
+.visibilityVisible {
+  visibility: visible;
+}
+
+.changeBackground {
+  background-color: black !important;
+}
+
+.navBackground {
+  background: rgb(0, 0, 0);
+  background: -moz-linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(36, 36, 36, 0.5) 100%
+  );
+  background: -webkit-linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(36, 36, 36, 0.5) 100%
+  );
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(36, 36, 36, 0.5) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#363636",GradientType=1);
+}

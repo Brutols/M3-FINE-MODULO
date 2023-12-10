@@ -172,3 +172,77 @@ let populateCarousel = function () {
 };
 
 populateCarousel();
+
+let carouselControlsNext = document.querySelectorAll(".carousel-control-next");
+let carouselControlsPrev = document.querySelectorAll(".carousel-control-prev");
+
+for (let i = 0; i < carouselControlsPrev.length; i++) {
+  carouselControlsPrev[i].classList.add("visibilityHidden")
+}
+
+const handleControls = function (ev) {
+  let control = ev.target.closest(".carousel-control-next")
+  let controlsArray = Array.from(carouselControlsNext);
+  let controlIndex = controlsArray.indexOf(control);
+  carouselControlsPrev[controlIndex].classList.replace("visibilityHidden", "visibilityVisible")
+};
+
+for (let i = 0; i < carouselControlsNext.length; i++) {
+  carouselControlsNext[i].onclick = handleControls;
+}
+
+let dropdownValues = document.querySelectorAll(".jumboMain .dropdown-item")
+let main = document.querySelector(".main")
+let mainSearch = document.querySelector(".mainSearch")
+
+let search = function (searchEv) {
+  main.classList.add("d-none")
+  mainSearch.classList.replace("d-none", "row")
+  mainSearch.innerHTML = `
+    <h3>${searchEv.target.innerHTML}</h3>
+  `
+  for (let i = 0; i < films.length; i++) {
+    if (searchEv.target.innerHTML.toLowerCase() === films[i].genre.toLowerCase()) {
+      mainSearch.innerHTML += `
+      <div class="filmCard d-flex flex-column col-2">
+      <img src="${films[i].image}" alt="film-img" class="w-100" />
+      <div class="filmInfo">
+        <div class="filmButtons d-flex justify-content-between">
+          <div class="mainIcons">
+            <ion-icon name="play" id="play"></ion-icon>
+            <ion-icon name="add"></ion-icon>
+            <ion-icon name="thumbs-up"></ion-icon>
+          </div>
+          <ion-icon name="chevron-down"></ion-icon>
+        </div>
+        <div class="filmDescription d-flex align-items-center gap-3">
+          <p class="filmTitle text-truncate m-0">${films[i].title}</p>
+          <p class="filmLenght m-0">${films[i].length}min</p>
+        </div>
+        <div class="genre">${films[i].genre}</div>
+      </div>
+    </div>
+      `
+    }
+  }
+}
+
+for (let i = 0; i < dropdownValues.length; i++) {
+  dropdownValues[i].onclick = search;
+}
+
+let showHome = function () {
+  main.classList.replace("d-none", "d-block")
+  mainSearch.classList.replace("row", "d-none")
+}
+
+let scrollNav = function () {
+  let nav = document.querySelector(".navContainer")
+  if (scrollY > 30) {
+    nav.classList.add("changeBackground")
+  } else {
+    nav.classList.remove("changeBackground")
+  }
+}
+
+window.onscroll = setInterval(scrollNav, 100);
