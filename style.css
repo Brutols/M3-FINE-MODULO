@@ -284,13 +284,13 @@ footer {
 /* media query responsive*/
 
 @media screen and (max-width: 1491px) {
-  .filmCard:nth-child(6) {
+  .carousel-item .filmCard:nth-child(6) {
     display: none !important;
   }
 }
 
 @media screen and (max-width: 1238px) {
-  .filmCard:nth-child(5) {
+  .carousel-item .filmCard:nth-child(5) {
     display: none !important;
   }
 
@@ -300,19 +300,19 @@ footer {
 }
 
 @media screen and (max-width: 987px) {
-  .filmCard:nth-child(4) {
+  .carousel-item .filmCard:nth-child(4) {
     display: none !important;
   }
 }
 
 @media screen and (max-width: 732px) {
-  .filmCard:nth-child(3) {
+  .carousel-item .filmCard:nth-child(3) {
     display: none !important;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .filmCard:nth-child(2) {
+  .carousel-item .filmCard:nth-child(2) {
     display: none !important;
   }
 
